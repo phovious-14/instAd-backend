@@ -58,6 +58,5 @@ exports.getOne = async (req,res) => {
         let arr = [];
         data2.map((d => arr.push({date:new Date(d.date), playbackId: d.playbackId })))
         res.json(arr)
-    }
-        
+    }        
 }
