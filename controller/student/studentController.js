@@ -8,11 +8,11 @@ exports.fetch = async (req, res) => {
 }
 
 exports.insert = async (req, res) => {
-    const { companyWalletAddress, category, siteLink, visitors } = req.body
+    const { companyWalletAddress, category, siteLink, visitors, desc } = req.body
     
     studentModel.findOneAndUpdate({companyWalletAddress},{
 
-        companyWalletAddress, category, siteLink, visitors
+        companyWalletAddress, category, siteLink, visitors, desc
         
     }, { upsert:true },
     (err) => {
