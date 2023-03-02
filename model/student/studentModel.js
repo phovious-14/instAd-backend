@@ -5,104 +5,28 @@ require("dotenv").config()
 
 const studentSchema = mongoose.Schema({
 
-    enrollmentNumber:{
-        type:Number,
+    companyWalletAddress:{
+        type:String,
         require:true
     },
-    personalEmail:{
-        type: String,
-    },
-    instituteEmail:{
-        type:String,
-        require: true
-    },
-    fullName:{
-        type:String,
-    },
-    lastName:{
-        type:String,
-    },
-    motherName:{
-        type:String,
-    },
-    motherEmail:{
-        type:String
-    },
-    bloodGroup:{
-        type:String,
-    },    
-    gender:{
-        type:String,
-    },    
-    dob:{
-        type:Date,
-    },
-    aadharNumber:{
-        type:Number,
-    },  
-    religion:{
-        type:String,
-    },    
-    nationality:{
-        type:String,
-    },    
-    caste:{
-        type:String,
-    },    
-    reserveCategory:{
-        type:String,
-    },    
-    personWithDisability:{
-        type:String,
-    },    
-    personalMobileNo:{
-        type:Number,
-    },  
-    parentMobileNo:{
-        type:Number,
-    },    
-    address:{
-        addressLine_1:{ // address | landmark / flat number
+    ads:[{
+        shardeumToken:{
             type:String,
+            require:true
         },
-        addressLine_2:{ // address | city/ nr. / opp. areas / village / Town
-            type:String, 
+        date:{
+            type:Date,
+            default:Date.now
         },
-        district:{
+        playbackId:{
             type:String,
-        },    
-        taluka:{
+            require:true
+        },
+        adOwnerWalletAddress:{
             type:String,
-        },     
-        state:{
-            type:String,
-        },    
-        pincode:{
-            type:Number,
-        },    
-        country:{
-            type:String,
+            require:true
         }
-    }, 
-    photo:{
-        avatar: {
-            type: String
-        },
-        cloudinary_id: {
-            type: String
-        }
-    },
-    googleId: {
-        type: String
-    }
-    // tokens: [
-    //     {
-    //         token:{
-    //             type:String,
-    //             required:true
-    //         }
-    //     }
-    // ]
+    }]
 })
 
 // studentSchema.pre("save",async function(next){
