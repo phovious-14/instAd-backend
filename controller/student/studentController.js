@@ -52,7 +52,9 @@ exports.add = async (req, res) => {
 
 exports.getOne = async (req,res) => {
     const {walletAddress} = req.params
-    const data = await studentModel.findOne({companyWalletAddress: walletAddress})
+    let data;
+    data.ads = []
+    data = await studentModel.findOne({companyWalletAddress: walletAddress})
     if(data.ads !== null) {
         let data2 = data.ads
         let arr = [];
