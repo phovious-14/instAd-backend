@@ -13,6 +13,10 @@ const studentSchema = mongoose.Schema({
         type:String,
         require:true
     },
+    desc:{
+        type:String,
+        require:true
+    },
     siteLink:{
         type:String,
         require:true
