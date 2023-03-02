@@ -52,8 +52,9 @@ exports.add = async (req, res) => {
 
 exports.getOne = async (req,res) => {
     const {walletAddress} = req.params
-    let data;
-    data.ads = []
+    let data = {
+        ads:'hi'
+    }
     data = await studentModel.findOne({companyWalletAddress: walletAddress})
     if(data.ads !== null) {
         let data2 = data.ads
