@@ -9,6 +9,18 @@ const studentSchema = mongoose.Schema({
         type:String,
         require:true
     },
+    category:{
+        type:String,
+        require:true
+    },
+    siteLink:{
+        type:String,
+        require:true
+    },
+    visitors:{
+        type:String,
+        require:true
+    },
     ads:[{
         shardeumToken:{
             type:String,

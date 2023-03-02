@@ -2,9 +2,13 @@ const express = require("express")
 const studentRoute = express.Router()
 const studentController = require("../../controller/student/studentController")
 
+studentRoute.get("/fetchcompany", studentController.fetch)
+
 studentRoute.get("/:walletAddress", studentController.getOne)
 
-studentRoute.post("/add", studentController.add)
+studentRoute.post("/addcompany", studentController.insert)
+
+studentRoute.post("/addAd", studentController.add)
 
 studentRoute.use('/*', (req, res)=>{
     res.send("<h1>404 page not found</h1>");
