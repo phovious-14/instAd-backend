@@ -14,16 +14,6 @@ app.use(express.urlencoded({extended:true})); //set urlencoded to true
 app.use(express.json()); //set json to true
 app.use(cookieParser()); //set cookie parser
 
-// // for passport oAuth2
-//set seesion
-app.use(expressSession({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: true
-}));
-// app.use(passport.initialize()); //initialize passport
-// app.use(passport.session()); // persistent login sessions
-
 // Add headers before the routes are defined
 app.use(function (req, res, next) {
 
