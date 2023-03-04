@@ -52,14 +52,10 @@ exports.add = async (req, res) => {
 
 exports.getOne = async (req,res) => {
     const {walletAddress} = req.params
-    let data = {
-        ads:'hi'
-    }
-    data = await studentModel.findOne({companyWalletAddress: walletAddress})
-    if(data.ads !== null) {
+    await studentModel.findOneAndUpdate({companyWalletAddress: walletAddress}).then(data => {
         let data2 = data.ads
         let arr = [];
         data2.map((d => arr.push({date:new Date(d.date), playbackId: d.playbackId })))
         res.json(arr)
-    }        
+    })
 }

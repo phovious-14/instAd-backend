@@ -4,7 +4,7 @@ const studentController = require("../../controller/student/studentController")
 
 studentRoute.get("/fetchcompany", studentController.fetch)
 
-studentRoute.get("/:walletAddress", studentController.getOne)
+studentRoute.get("/:companyWalletAddress", studentController.getOne)
 
 studentRoute.post("/addcompany", studentController.insert)
 
